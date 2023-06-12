@@ -1,0 +1,35 @@
+<div *ngIf="!editValue; else editInfo">
+  <ul class="white-text">
+    <li class="white-text">{{ userProfile.username }}</li>
+    <li class="white-text">{{ userProfile.email }}</li>
+  </ul>
+  <br />
+  <button (click)="editProfile()">Editar Perfil</button>
+</div>
+<ng-template #editInfo>
+  <h2>Formulario de contacto</h2>
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input
+      type="text"
+      id="nombre"
+      name="username"
+      [(ngModel)]="userProfile.username"
+      required
+    />
+    <br />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="userProfile.email" required />
+    <br />
+
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" name="password"  [(ngModel)]="userProfile.password" required />
+
+    <label for="image">Imagen</label>
+    <input type="file" name="picture" (change)="onFileSelected($event)" />
+
+    <button (click)="updateProfile()" class="enviar-btn">Guardar Cambios</button>
+    <button (click)="cancelUpdate()" class="enviar-btn">Cancelar</button>
+  </form>
+</ng-template>

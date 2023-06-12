@@ -1,0 +1,42 @@
+<!-- <h1>Iniciar Sesion</h1>
+<form (ngSubmit)="login()" #loginForm="ngForm">
+  <div>
+    <label for="">Correo</label>
+    <input type="email" name="email" [(ngModel)]="email" required />
+  </div>
+  <div>
+    <label for="">contraseña</label>
+    <input type="password" name="password" [(ngModel)]="password" required />
+  </div>
+
+  <button type="submit" [disabled]="!loginForm.form.valid">
+    Iniciar Sesion
+  </button>
+</form> -->
+
+<!-- Siempre se pone el name para validar los datos -->
+
+<div class="login-section">
+  <div class="form-box login">
+    <h1 class="titulo">Iniciar Sesion</h1>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="input-box">
+        <label for="email">Correo</label>
+        <input type="email" name="email" [(ngModel)]="email" required />
+      </div>
+      <div class="input-box">
+        <label for="password">contraseña</label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+
+      <button type="submit" [disabled]="!loginForm.form.valid">
+        Iniciar Sesion
+      </button>
+    </form>
+  </div>
+</div>
